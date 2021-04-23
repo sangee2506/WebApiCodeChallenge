@@ -28,7 +28,7 @@ namespace WebApplication2.Repository
 
         public List<Supplier> GetAllSuppliers()
         {
-            return db.Suppliers.ToList();
+            return db.Suppliers.Include(x=>x.Items).ToList();
         }
 
         public Supplier GetSupplierById(int id)
